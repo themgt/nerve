@@ -34,7 +34,7 @@ module Nerve
         code = response.code.to_i
         body = response.body
 
-        if code >= 200 and code < 300 and (@expect == nil || body.include?(@expect))
+        if code >= 200 and code < 500 and (@expect == nil || body.include?(@expect))
           log.debug "nerve: check #{@name} got response code #{code} with body \"#{body}\""
           return true
         else
